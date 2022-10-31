@@ -29,7 +29,7 @@ var gImgs = [
     { id: 7, url: 'img/6.jpg', keywords: ['magician', 'listening'] },
     { id: 8, url: 'img/7.jpg', keywords: ['baby', 'funny'] },
     { id: 9, url: 'img/8.jpg', keywords: ['laughing', 'president'] },
-    { id: 10, url: 'img/9.jpg', keywords: ['wrestling','president'] },
+    { id: 10, url: 'img/9.jpg', keywords: ['wrestling', 'president'] },
     { id: 11, url: 'img/10.jpg', keywords: ['what would you do', 'funny'] },
     { id: 12, url: 'img/11.jpg', keywords: ['programmer', 'funny'] },
     { id: 13, url: 'img/12.jpg', keywords: ['perfect', 'funny'] },
@@ -37,21 +37,22 @@ var gImgs = [
     { id: 15, url: 'img/14.jpg', keywords: ['decisive', 'president'] },
     { id: 16, url: 'img/15.jpg', keywords: ['so simple', 'funny'] },
 ];
-
-function filterMemes(value){
+function removeActiveLine() {
+    gMeme.selectedLineIdx = null
+}
+function filterMemes(value) {
     console.log(value);
-    let filteredMemes =  gImgs.map(meme=>{
-        if(meme.keywords.some(keyword=> keyword.includes(value)))
-        {
-            
+    let filteredMemes = gImgs.map(meme => {
+        if (meme.keywords.some(keyword => keyword.includes(value))) {
+
             return meme
         }
         return false
- 
+
     })
-    filteredMemes = filteredMemes.filter(meme=> meme !== false)
+    filteredMemes = filteredMemes.filter(meme => meme !== false)
     return filteredMemes
-    
+
 
 }
 
@@ -80,7 +81,7 @@ function setLineTxt(inputTxt) {
     renderMeme()
 }
 
-function getMemes(){
+function getMemes() {
     return gImgs
 }
 

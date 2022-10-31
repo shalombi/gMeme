@@ -78,12 +78,12 @@ function movePositionText(dirX = 0, dirY = 0, isInCenter = false) {
 
 }
 
-function drawText(lines, foo=null) {
+function drawText(lines, foo = null) {
     // addListeners()
     const coordsDraw = getCoordsDraw()
     const heightDiff = coordsDraw.middle.xMiddle * 1.2
     const sizeFont = gMeme.lines[gMeme.selectedLineIdx].size
-
+    console.log(gMeme.lines[gMeme.selectedLineIdx].size, 'gMeme.lines[gMeme.selectedLineIdx].size ');
     // const yTest = gMeme.lines[gMeme.selectedLineIdx].pos.yPos
 
     lines.forEach((line, idx) => {
@@ -92,14 +92,14 @@ function drawText(lines, foo=null) {
             const xCoord = coordsDraw.fifth.xFifth * 1.4
             const yCoord = coordsDraw.fifth.yFifth + (idx * heightDiff)
             setPoseMeme({ xPos: xCoord + (gDistance.xDis), yPos: yCoord + (gDistance.yDis) }, idx)
-            drawTextOnCanvas(line.txt, gMeme.lines[idx].pos.xPos, gMeme.lines[idx].pos.yPos, sizeFont, 'right', 'impact', idx, line, foo=null)
+            drawTextOnCanvas(line.txt, gMeme.lines[idx].pos.xPos, gMeme.lines[idx].pos.yPos, sizeFont, 'right', 'impact', idx, line, foo = null)
         }
         else {
 
             const xCoord = coordsDraw.fifth.xFifth * 1.4
             const yCoord = (1.05 * coordsDraw.middle.yMiddle)
             setPoseMeme({ xPos: xCoord + (gDistance.xDis), yPos: yCoord + (gDistance.yDis) }, idx)
-            drawTextOnCanvas(line.txt, gMeme.lines[idx].pos.xPos, gMeme.lines[idx].pos.yPos, sizeFont, 'left', 'impact', idx, line, foo=null)
+            drawTextOnCanvas(line.txt, gMeme.lines[idx].pos.xPos, gMeme.lines[idx].pos.yPos, sizeFont, 'left', 'impact', idx, line, foo = null)
         }
     }
     )
@@ -115,7 +115,7 @@ function setPoseMeme({ xPos, yPos }, idxRow) {
 }
 
 
-function drawTextOnCanvas(text, x, y, size, align, font, idx, line, foo=null ) {
+function drawTextOnCanvas(text, x, y, size, align, font, idx, line, foo = null) {
     // console.log('drawTextOnCanvas');
     const meme = getMeme()
     gCtx.beginPath()

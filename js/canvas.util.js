@@ -22,15 +22,17 @@ function getCoordsDraw(divider = 1) {
 }
 
 //download
-function downloadLink(img) {
-    const elImgLink = document.querySelector('.download')
-    elImgLink.href = img
-    elImgLink.download = 'my-meme'
-    elImgLink.click()
-}
+// function downloadMeme() {
+//     const elLink = document.querySelector('.download')
 
-function downloadMeme() {
-    gMeme.selectedLineIdx = 0
-    renderMeme(downloadLink)
+//     removeActiveLine()
+//     renderMeme(downloadLink)
 
-}
+//     function downloadLink(img) {
+//         elLink.href = img
+//         elLink.download = 'my-meme'
+//         elLink.click()
+//     }
+// }
+
+

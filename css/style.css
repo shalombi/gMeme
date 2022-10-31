@@ -251,11 +251,19 @@ button:hover {
     padding: 6px;
 }
 
+.canvas-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .editor canvas {
     position: absolute;
     /* top: 80px; */
+    top: 3.2%;
     /* left: 60px; */
-    left: 40%;
+    /* left: 40%; */
 }
 
 .editor-memes {
@@ -269,6 +277,9 @@ button:hover {
 }
 
 
+.editor {
+    position: relative;
+}
 
 /* color */
 .set-color {
@@ -315,8 +326,8 @@ button:hover {
 .list-icons-editor {
     position: absolute;
     margin-block-start: -2%;
-    right: 5%;
-    top: 24px;
+    right: 8%;
+    top: 13px;
 }
 
 
@@ -388,7 +399,7 @@ ul li .editor-icons {
 }
 
 .share-btn {
-    left: 51%;
+    left: 47%;
 }
 
 .download-btn {

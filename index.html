@@ -41,7 +41,7 @@
         <section class="search-input-search-input">
             <input oninput="onFilterMemes(this.value)" class="search-input" type="text" placeholder="Search">
             <div class="keywords">
-           </div>
+            </div>
         </section>
 
 
@@ -50,8 +50,11 @@
 
         <!-- <section class="editor-modal"> -->
         <section class="editor">
+            <div class="canvas-container x">
 
-            <canvas height="300px" width="300px" class="my-canvas"></canvas>
+
+                <canvas height="300px" width="300px" class="my-canvas"></canvas>
+            </div>
             <!-- <img class="example-img-for-canvas" src="img/2.jpg" alt=""> -->
 
             <div class="editor-memes">
@@ -172,8 +175,8 @@
                     <div class="btn" onclick="addLine(this.innerText)">🥳</div>
                 </section>
                 <button class="share-btn" onclick="shareMme()">SHARE</button>
-                <button class="download-btn" onclick="downloadMeme()">Download</button>
-                <a class="download"></a>
+                <!-- <button class="download-btn" onclick="downloadMeme()">Download</button>
+                <a class="download"></a> -->
 
             </div>
 

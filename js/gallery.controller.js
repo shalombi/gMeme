@@ -87,13 +87,20 @@ function displayGallery() {
     document.querySelector('nav').classList.remove('nav-open')
     document.querySelector('.editor').style.display = 'none'
     document.querySelector('.hamburger-btn').innerText = "☰"
+    document.querySelector('.keywords').innerText = "flex"
+    document.querySelector('.search-input').style.display = 'none'
+
+
+    // keywords
 
 }
 
 function displayMemeEditor() {
     document.querySelector('.gallery-container').style.display = 'none'
-    // document.querySelector('.keywords').style.display = "none"
-
+    document.querySelector('.keywords').style.display = "none"
+    // search-input
     document.querySelector('.editor').style.display = 'block'
+    document.querySelector('.search-input').style.display = 'none'
+
 }
 
