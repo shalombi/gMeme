@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Meme Generator</title>
+</head>
+
+<body onload="galleryInit()">
+
+    <nav>
+        <ul class="clean-list">
+            <li class="nav-tag">
+                Memes
+            </li class="nav-tag">
+            <li onclick="displayGallery()" class="nav-tag">
+                Gallery
+            </li>
+            <li class="about nav-tag">
+                About
+            </li>
+        </ul>
+    </nav>
+
+    <header>
+        <!-- <span>MemeGen</span> -->
+        <!-- <div><img class="logo" src="design/logo.png" alt=""></div> -->
+        <div><span onclick="displayGallery()" class="meme-gen-txt-logo">Meme Generator</span></div>
+
+        <button class="hamburger-btn" onclick="hamburgerMenuClicked(this)">☰</button>
+
+
+
+    </header>
+
+    <main>
+
+        <section class="search-input-search-input">
+            <input oninput="onFilterMemes(this.value)" class="search-input" type="text" placeholder="Search">
+            <div class="keywords">
+           </div>
+        </section>
+
+
+
+        <div class="gallery-container"></div>
+
+        <!-- <section class="editor-modal"> -->
+        <section class="editor">
+
+            <canvas height="300px" width="300px" class="my-canvas"></canvas>
+            <!-- <img class="example-img-for-canvas" src="img/2.jpg" alt=""> -->
+
+            <div class="editor-memes">
+
+                <section>
+
+                    <span>Edit text lines</span>
+
+                    <!-- </section> -->
+                    <ul class="list-icons-editor">
+                        <li class="clean-list">
+                            <img class="editor-icons edit-btn" src="img/icons_/trash-can.svg"
+                                onclick="clearCanvasBoard()" alt="">
+                        </li>
+
+                        <li class="clean-list">
+                            <img class="editor-icons edit-btn" src="img/icons_/switch-line.svg"
+                                onclick="changeSelectedLineIdx()" alt="">
+                        </li>
+                        <li class="clean-list">
+                            <img class="editor-icons edit-btn" src="img/icons_/add-line.svg" onclick="addLine()" alt="">
+                        </li>
+
+
+                    </ul>
+                </section>
+
+                <section class="select-lang">
+                    <select>
+                        <option value="impact">impact</option>
+                        <!-- <option value="impact">impact</option> -->
+                    </select>
+                </section>
+
+                <section class="btns-editor">
+
+
+
+                    <div class="btn-editor" onclick="changeFontSize(false)">
+                        <img class="editor-icons btn" src="img/icons_/a-.svg" alt="">
+                    </div>
+
+                    <div class="btn-editor" onclick="changeFontSize(true)">
+                        <img class="editor-icons btn" src="img/icons_/a+.svg" alt="">
+                    </div>
+
+                    <div class="btn-editor" onclick="">
+                        <img class="editor-icons btn" src="img/icons_/seperator.svg" alt="">
+                    </div>
+
+
+                    <div class="btn-editor">
+                        <div class="editor-icons btn" onclick="movePositionText(0,+15)">↓ </div>
+                    </div>
+
+                    <div class="btn-editor">
+                        <div class="editor-icons btn" onclick="movePositionText(0,-15)">↑ </div>
+                    </div>
+
+
+                    <!-- specific piece -->
+                    <!-- <div class="btn-editor">
+                        <div class="editor-icons btn" onclick="changeHeight(-25)">↑ </div>
+                    </div> -->
+
+                    <div class="btn-editor" onclick="">
+                        <img class="editor-icons btn" src="img/icons_/seperator.svg" alt="">
+                    </div>
+
+                    <div class="btn-editor" onclick="movePositionText(-20)">
+                        <img class="editor-icons btn" src="img/icons_/align-left.svg" alt="">
+                    </div>
+
+
+
+                    <div class="btn-editor" onclick="movePositionText(0,0,true)">
+                        <img class="editor-icons btn" src="img/icons_/align-middle.svg" alt="">
+                    </div>
+
+                    <div class="btn-editor" onclick="movePositionText(20)">
+                        <img class="editor-icons btn" src="img/icons_/align-right.svg" alt="">
+                    </div>
+
+                    <div class="btn-editor btn"> <img class="editor-icons" src="img/icons_/seperator.svg" alt=""> </div>
+                    <!-- <div class="btn-editor"> <img class="editor-icons" src="img/icons_/seperator.svg" alt=""> </div> -->
+                    <div class="btn-editor btn" onclick=""> <img class="editor-icons" src="img/icons_/add-line.svg"
+                            onclick="addLine()" alt="">
+                    </div>
+
+                    <div class="btn-editor" onclick="">
+                        <input type="color" class="set-color" oninput="setTextColor(this.value)" />
+                        <img class="editor-icons btn" src="img/icons_/brush.svg" alt="">
+                        </img>
+                    </div>
+
+                </section>
+
+
+
+                <input class="input-text-editor" type="text" oninput="setLineTxt(this)" name="" id="">
+
+                <div class="select-emojies-container">
+
+                </div>
+                <!-- emojiClicked(this.innerText) -->
+                <section class="memesEmojis">
+                    <div class="btn" onclick="addLine(this.innerText)">😂 </div>
+                    <div class="btn" onclick="addLine(this.innerText)">😃</div>
+                    <div class="btn" onclick="addLine(this.innerText)">😴 </div>
+                    <div class="btn" onclick="addLine(this.innerText)">😍 </div>
+                    <div class="btn" onclick="addLine(this.innerText)">🤩 </div>
+                    <div class="btn" onclick="addLine(this.innerText)">🥳</div>
+                    <div class="btn" onclick="addLine(this.innerText)">😂 </div>
+                    <div class="btn" onclick="addLine(this.innerText)">😃</div>
+                    <div class="btn" onclick="addLine(this.innerText)">😴 </div>
+                    <div class="btn" onclick="addLine(this.innerText)">😍 </div>
+                    <div class="btn" onclick="addLine(this.innerText)">🤩 </div>
+                    <div class="btn" onclick="addLine(this.innerText)">🥳</div>
+                </section>
+                <button class="share-btn" onclick="shareMme()">SHARE</button>
+                <button class="download-btn" onclick="downloadMeme()">Download</button>
+                <a class="download"></a>
+
+            </div>
+
+        </section>
+
+    </main>
+    <script src="js/services/uploade.servies.js"></script>
+    <script src="js/services/meme.service.js"></script>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/util.service.js"></script>
+    <script src="js/services/meme.service.js"></script>
+    <script src="js/canvas.util.js"></script>
+    <script src="js/movement.js"></script>
+    <script src="js/meme.controller.js"></script>
+    <script src="js/gallery.controller.js"></script>
+    <!-- scs -->
+</body>
+
+</html>
