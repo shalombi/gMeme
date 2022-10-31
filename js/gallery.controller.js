@@ -84,11 +84,13 @@ function displayGallery() {
     // document.querySelector('.keywords').style.display = "none"
 
     document.querySelector('.gallery-container').style.display = "grid"
-    document.querySelector('nav').classList.remove('nav-open')
+    document.querySelector('nav').classList.add('nav-open')
     document.querySelector('.editor').style.display = 'none'
     document.querySelector('.hamburger-btn').innerText = "☰"
-    document.querySelector('.keywords').innerText = "flex"
-    document.querySelector('.search-input').style.display = 'none'
+    // document.querySelector('.keywords').innerText = "flex"
+    document.querySelector('.keywords').style.display = "flex"
+
+    document.querySelector('.search-input').style.display = 'block'
 
 
     // keywords
