@@ -86,8 +86,6 @@ nav {
     z-index: 5;
 }
 
-.editor-icons {}
-
 .nav-open {
     pointer-events: all;
     opacity: 1;
@@ -328,9 +326,8 @@ button:hover {
 .list-icons-editor {
     position: absolute;
     margin-block-start: -2%;
-    left: 2.5%;
-    /* top: 13px; */
-    /* background-color: #e9a41a; */
+    right: 8%;
+    top: 13px;
 }
 
 
